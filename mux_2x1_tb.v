@@ -17,26 +17,26 @@ wire [31:0] out;
 mux_2x1 mux (input_a, input_b, sel, out);
 
 initial begin
-    a = 0;
-    b = 0;
+    input_a = 0;
+    input_b = 0;
     sel = 0;
     $display("Output Q: %b", out);
 
     #10
-    a = 1;
-    b = 0;
+    input_a = 1;
+    input_b = 0;
     sel = 0;
     $display("Output Q: %b", out);
 
     #10
-    a = 0;
-    b = 0;
+    input_a = 0;
+    input_b = 0;
     sel = 0;
     $display("Output Q: %b", out);
 
     #10
-    a = 0;
-    b = 1;
+    input_a = 0;
+    input_b = 1;
     sel = 1;
     $display("Output Q: %b", out);
 end
