@@ -21,7 +21,7 @@ reg32 r (clk, in, enable, reset, out);
 always
     #10 clk = ~clk;
 
-/* Display mux state */
+/* Display reg state */
 always @(in or enable or reset)
     $display("%t:\tin\t%b\n\tenable\t%b\n\treset\t%b\n\tout\t%b\n",
              $time, in, enable, reset, out);
