@@ -11,8 +11,8 @@
 module control_tb;
 
 reg [5:0] opcode;
-output regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite;
-output [1:0] aluop;
+wire regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite;
+wire [1:0] aluop;
 
 reg clk;
 
