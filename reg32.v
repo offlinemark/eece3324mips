@@ -8,7 +8,7 @@
 
 `timescale 1ns / 1ns
 
-module reg32 (clk, in, out, enable, reset);
+module reg32 (clk, in, enable, reset, out);
 
 input enable, reset, clk;
 input [31:0] in;

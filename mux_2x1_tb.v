@@ -24,7 +24,7 @@ always
 
 /* Display mux state */
 always @(input_a or input_b or sel)
-    $display("%t:\n\tsel\t%b\n\tinput_a\t%b\n\tinput_b\t%b\n\tout\t%b\n",
+    $display("%t:\tsel\t%b\n\tinput_a\t%b\n\tinput_b\t%b\n\tout\t%b\n",
              $time, sel, input_a, input_b, out);
 
 /* Testbench */
