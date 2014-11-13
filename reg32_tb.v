@@ -55,7 +55,7 @@ initial begin
     enable = 0;
     in = 0;
 
-    $finish;
+    #40 $finish;
 end
 
 endmodule
