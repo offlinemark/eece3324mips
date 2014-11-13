@@ -7,10 +7,11 @@
  */
 
 module control (opcode, regdst, jump, branch, memread, memtoreg, aluop,
-                memwrite, alusrc, regwrite);
+                memwrite, alusrc, regwrite, addi);
 
 input [5:0] opcode;
-output reg regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite;
+output reg regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite,
+           addi;
 output reg [1:0] aluop;
 
 always @(opcode)
@@ -24,6 +25,7 @@ begin
     memwrite = 0;
     alusrc = 0;
     regwrite = 0;
+    addi = 0;
     aluop = 0;
 
     // flip on necessary bits
@@ -39,6 +41,7 @@ begin
                 regwrite = 1;
                 aluop = 2'b10;
                 alusrc = 1;
+                addi = 1;
             end
         6'b000010: jump = 1; // j
         6'b000100:  // beq

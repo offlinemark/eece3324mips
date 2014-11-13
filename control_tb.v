@@ -11,13 +11,13 @@
 module control_tb;
 
 reg [5:0] opcode;
-wire regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite;
+wire regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite, addi;
 wire [1:0] aluop;
 
 reg clk;
 
 control ctrl(opcode, regdst, jump, branch, memread, memtoreg, aluop,
-                memwrite, alusrc, regwrite);
+                memwrite, alusrc, regwrite, addi);
 
 /* Clock */
 always
@@ -25,9 +25,9 @@ always
 
 /* Display control unit state */
 always @(posedge clk)
-    $display("%t:\topcode\t\t%b\n\tregdst\t\t%b\n\tjump\t\t%b\n\tbranch\t\t%b\n\tmemread\t\t%b\n\tmemtoreg\t%b\n\tmemwrite\t%b\n\talusrc\t\t%b\n\tregwrite\t%b\n\taluop\t\t%b\n",
+    $display("%t:\topcode\t\t%b\n\tregdst\t\t%b\n\tjump\t\t%b\n\tbranch\t\t%b\n\tmemread\t\t%b\n\tmemtoreg\t%b\n\tmemwrite\t%b\n\talusrc\t\t%b\n\tregwrite\t%b\n\taddi\t\t%b\n\taluop\t\t%b\n",
              $time, opcode, regdst, jump, branch, memread, memtoreg, memwrite,
-             alusrc, regwrite, aluop);
+             alusrc, regwrite, addi, aluop);
 
 /* Testbench */
 initial begin
