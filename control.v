@@ -36,7 +36,6 @@ begin
             end
         6'b001000:  // addi
             begin
-                $display("FS");
                 regwrite = 1;
                 aluop = 2'b10;
                 alusrc = 1;
