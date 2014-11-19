@@ -20,7 +20,7 @@ begin
     case (control)
         4'b0010: result <= input1 + input2;
         4'b0110: result <= input1 - input2;
-        4'b0111: result <= ((input1 < input2) ? 1 : 0);
+        4'b0111: result <= input1 < input2;
         default: result <= 0;
     endcase
 end
