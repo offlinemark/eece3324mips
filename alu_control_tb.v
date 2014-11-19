@@ -10,14 +10,13 @@
 
 module alu_control_tb;
 
-reg addi;
 reg [1:0] op;
 reg [5:0] func;
 wire [3:0] out;
 
 reg clk;
 
-alu_control aluctrl (op, func, addi, out);
+alu_control aluctrl (op, func, out);
 
 /* Clock */
 always
@@ -25,8 +24,8 @@ always
 
 /* Display alu control unit state */
 always @(posedge clk)
-    $display("%t:\top\t%b\n\tfunc\t%b\n\taddi\t%b\n\tout\t%b\n", $time, op,
-             func, addi, out);
+    $display("%t:\top\t%b\n\tfunc\t%b\n\tout\t%b\n", $time, op,
+             func, out);
 
 /* Testbench */
 initial begin
@@ -34,7 +33,6 @@ initial begin
     clk = 0;
     op = 0;
     func = 0;
-    addi = 0;
 
     @(negedge clk)
     op = 2;
@@ -42,10 +40,8 @@ initial begin
 
     @(negedge clk)
     op = 2;
-    addi = 1;
 
     @(negedge clk)
-    addi = 0;
     op = 2;
     func = 6'b101010;
 
