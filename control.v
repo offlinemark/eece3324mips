@@ -7,10 +7,10 @@
  */
 
 module control (opcode, regdst, jump, branch, memread, memtoreg, aluop,
-                memwrite, alusrc, regwrite);
+                memwrite, alusrc, regwrite, halt);
 
 input [5:0] opcode;
-output reg regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite;
+output reg regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite, halt;
 output reg [1:0] aluop;
 
 always @(opcode)
@@ -56,6 +56,10 @@ begin
             begin
                 memwrite = 1;
                 alusrc = 1;
+            end
+        6'h3f: // hlt
+            begin
+                halt = 1;
             end
     endcase
 end

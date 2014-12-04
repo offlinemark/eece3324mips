@@ -6,7 +6,7 @@
  * 32 bit 2-to-1 multiplexer
  */
 
-`timescale 1ns / 1ns
+//`timescale 1ns / 1ns
 
 module mux_2x1 (input_a, input_b, sel, out);
 

@@ -47,7 +47,8 @@ initial
 //		memory[i] = 8'b0;
 //	end    
 
-    file = $fopen("MinMax.hexdump","r");
+    //file = $fopen("MinMax.hexdump","r");
+    file = $fopen("/Users/Student/mmossber/arch/proj/eece3324mips/MinMax.hexdump", "r");
     if (file == `NULL)
         disable file_block;
 

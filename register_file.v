@@ -6,7 +6,7 @@
  * Register file
  */
 
-`timescale 1ns / 1ns
+//`timescale 1ns / 1ns
 
 module register_file (clk, read1, read2, write, write_data, write_enable,
                       read_data1, read_data2);
@@ -17,6 +17,11 @@ input [31:0] write_data;
 output [31:0] read_data1, read_data2;
 
 reg [31:0] regfile [31:0];
+
+//initial
+//begin
+ // for (
+//end
 
 assign read_data1 = regfile[read1];
 assign read_data2 = regfile[read2];
