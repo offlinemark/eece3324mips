@@ -50,7 +50,7 @@ reg32 pc(clk, jmp_mux_out, pc_enable, pc_reset, pc_out);
 register_file rf(clk, rd_reg1, rd_reg2, rf_mux_out, dmem_mux_out, rf_wr,
                  alu_in1, rd_data2);
 alu_control aluctl(aluop, func, alu_ctl);
-control ctl(ctl_in, rf_mux_ctl, jmp_mux_ctl, br_ctl, dmem_rd, dmem_mux_ctl,
+control ctl(instr[31:26], rf_mux_ctl, jmp_mux_ctl, br_ctl, dmem_rd, dmem_mux_ctl,
             aluop, dmem_wr, alu_mux_ctl, rf_wr, halt);
 alu alu(alu_ctl, alu_in1, alu_in2, alu_out, alu_zero);
 

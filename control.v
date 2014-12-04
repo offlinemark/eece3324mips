@@ -39,6 +39,11 @@ begin
                 regwrite = 1;
                 alusrc = 1;
             end
+        6'b001001: // addiu
+            begin
+                regwrite = 1;
+                alusrc = 1;
+            end
         6'b000010: jump = 1; // j
         6'b000100:  // beq
             begin

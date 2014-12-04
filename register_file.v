@@ -16,12 +16,14 @@ input [4:0] read1, read2, write;
 input [31:0] write_data;
 output [31:0] read_data1, read_data2;
 
+reg [5:0] i;
 reg [31:0] regfile [31:0];
 
-//initial
-//begin
- // for (
-//end
+initial
+begin
+    for (i = 0; i < 32; i=i+1)
+        regfile[i] = 0; 
+end
 
 assign read_data1 = regfile[read1];
 assign read_data2 = regfile[read2];
