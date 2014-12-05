@@ -25,6 +25,7 @@ begin
     alusrc = 0;
     regwrite = 0;
     aluop = 0;
+    halt = 0;
 
     // flip on necessary bits
     case (opcode)
