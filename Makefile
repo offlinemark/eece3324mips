@@ -1,8 +1,9 @@
 CC = iverilog
+TBDIR = tb
 
 # single modules
 $(MOD):
-	$(CC) $(MOD).v $(MOD)_tb.v
+	$(CC) $(MOD).v $(TBDIR)/$(MOD)_tb.v
 	./a.out
 
 # whole cpu

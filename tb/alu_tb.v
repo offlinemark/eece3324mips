@@ -59,6 +59,26 @@ initial begin
     input2 = 4;
 
     @(negedge clk)
+    input1 = 4;
+    input2 = 1;
+
+    @(negedge clk)
+    input1 = 32'h80000004;
+    input2 = 1;
+
+    @(negedge clk)
+    input1 = 1;
+    input2 = 32'h80000004;
+
+    @(negedge clk)
+    input1 = 32'h80000005;
+    input2 = 32'h80000004;
+
+    @(negedge clk)
+    input1 = 32'h80000004;
+    input2 = 32'h80000005;
+
+    @(negedge clk)
     control = 0;
     input1 = 0;
     input2 = 0;
