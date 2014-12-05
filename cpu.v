@@ -1,14 +1,19 @@
+/*
+ * Mark Mossberg
+ * 12/5/2014
+ * EECE 3324
+ *
+ * cpu.v -- main cpu module
+ */
+
 module cpu(clk_in, pc_reset);
 
 input clk_in, pc_reset;
 
-
-
-
 /*
  * Wires
  */
- 
+
 wire clk, halt;
 and cand(clk, clk_in, !halt);
 
@@ -22,7 +27,6 @@ wire [3:0] alu_ctl;
 wire [1:0] aluop;
 wire  pc_enable, alu_zero, rf_mux_ctl, jmp_mux_ctl, br_ctl,
       br_mux_ctl, dmem_rd, dmem_wr, dmem_mux_ctl, alu_mux_ctl, rf_wr;
-      
 
 /*
  * Assigns

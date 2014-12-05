@@ -1,12 +1,10 @@
 /*
  * Mark Mossberg
- * 11/12/14
- * EECE 3324 - Homework 6
+ * 12/5/2014
+ * EECE 3324
  *
- * Register file
+ * register_file.v -- Register file (32 registers, 32 bits each)
  */
-
-//`timescale 1ns / 1ns
 
 module register_file (clk, read1, read2, write, write_data, write_enable,
                       read_data1, read_data2);
@@ -19,15 +17,17 @@ output [31:0] read_data1, read_data2;
 reg [5:0] i;
 reg [31:0] regfile [31:0];
 
+/* initial clear */
 initial
 begin
     for (i = 0; i < 32; i=i+1)
-        regfile[i] = 0; 
+        regfile[i] = 0;
 end
 
 assign read_data1 = regfile[read1];
 assign read_data2 = regfile[read2];
 
+/* writeback */
 always @(posedge clk)
 begin
     if (write_enable)

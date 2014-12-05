@@ -1,9 +1,9 @@
 /*
  * Mark Mossberg
- * 11/13/14
- * EECE 3324 - Homework 6
+ * 12/5/2014
+ * EECE 3324
  *
- * ALU Control testbench
+ * alu_control.v -- alu control module
  */
 
 module alu_control (op, func, out);

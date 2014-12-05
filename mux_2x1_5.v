@@ -1,12 +1,10 @@
 /*
  * Mark Mossberg
- * 11/13/14
- * EECE 3324 - Homework 6
+ * 12/5/2014
+ * EECE 3324
  *
- * 5 bit 2-to-1 multiplexer
+ * mux_2x1_5.v -- 5 bit 2-to-1 multiplexer
  */
-
-//`timescale 1ns / 1ns
 
 module mux_2x1_5 (input_a, input_b, sel, out);
 
@@ -23,4 +21,3 @@ begin
 end
 
 endmodule
-

@@ -1,9 +1,9 @@
 /*
  * Mark Mossberg
- * 11/13/14
- * EECE 3324 - Homework 6
+ * 12/5/2014
+ * EECE 3324
  *
- * ALU
+ * alu.v -- alu module
  */
 
 module alu (control, input_a, input_b, result, zero);
@@ -24,6 +24,5 @@ begin
         default: result <= 0;
     endcase
 end
-
 
 endmodule

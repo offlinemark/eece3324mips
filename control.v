@@ -1,21 +1,22 @@
 /*
  * Mark Mossberg
- * 11/13/14
- * EECE 3324 - Homework 6
+ * 12/5/2014
+ * EECE 3324
  *
- * Control unit
+ * control.v -- cpu control decoder
  */
 
 module control (opcode, regdst, jump, branch, memread, memtoreg, aluop,
                 memwrite, alusrc, regwrite, halt);
 
 input [5:0] opcode;
-output reg regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite, halt;
+output reg regdst, jump, branch, memread, memtoreg, memwrite, alusrc, regwrite,
+           halt;
 output reg [1:0] aluop;
 
 always @(opcode)
 begin
-    // reset everything to 0
+    /* reset everything to 0 */
     regdst = 0;
     jump = 0;
     branch = 0;
@@ -27,7 +28,7 @@ begin
     aluop = 0;
     halt = 0;
 
-    // flip on necessary bits
+    /* flip on necessary bits */
     case (opcode)
         0: // add, slt
             begin
