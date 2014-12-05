@@ -1,0 +1,23 @@
+# (Mini) MIPS ISA Implementation
+
+Mark Mossberg
+Northeastern University
+EECE 3324: Computer Architecture
+Professor Yunsi Fei
+December 5, 2014
+
+## Description
+
+This is a miniature implementation of a single cycle MIPS processor
+architecture, supporting the following instructions:
+
+- add, addi, addiu, slt
+- beq, j
+- lw, sw
+- hlt (artificial)
+
+## Testing
+
+`cpu_tb.v' is the main testbench to run, and was tested using a simulation
+time of 15015 ns. `memory1.v' and `MinMax.hexdump' are provided testing
+files.
