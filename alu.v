@@ -27,7 +27,7 @@ begin
                     result <= input_a[30:0] < input_b[30:0];
                 else
                     /* if MSBs are different, and input_a's MSB is set, it is less */
-                    result <= input_a[31] ? 1 : 0;
+                    result <= input_a[31];
             end
         default: result <= 0;
     endcase
