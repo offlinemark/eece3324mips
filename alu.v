@@ -20,7 +20,7 @@ begin
     case (control)
         4'b0010: result <= input_a + input_b;
         4'b0110: result <= input_a - input_b;
-        5'b0111: // slt
+        4'b0111: // slt
             begin
                 if (input_a[31] == input_b[31])
                     /* if MSBs are same, do normal comparison on data bits */
