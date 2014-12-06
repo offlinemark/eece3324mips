@@ -16,6 +16,8 @@ architecture, supporting the following instructions:
 - lw, sw
 - hlt (artificial)
 
+See REPORT.md for more information.
+
 ## Testing
 
 `cpu_tb.v' is the main testbench to run, and was tested using a simulation
